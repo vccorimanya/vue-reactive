@@ -9,20 +9,21 @@
 <body>
 
   <div id="app">
-    <span v-text="message"></span><br>
-    <input type="text" v-model="message">
+    <span p-text="message"></span><br>
+    <input type="text" p-model="message">
   </div>
-  <script src="https://unpkg.com/vue@3"></script>
+  <script src="./reactive.js"></script>
   <script>
-    const { createApp } = Vue
-    const app = createApp({
-      data() {
-        return {
-          message: "Hola mundo"
+      const { createApp } = miniVue
+
+      const app = createApp({
+        data() {
+          return {
+            message: "Hola mundo"
+          };
         }
-      }
-    })
-    app.mount("#app")
+      });
+      app.mount()
   </script>
 </body>
 </html>
