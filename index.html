@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hola Mundo</title>
+</head>
+<body>
+  <script src="https://unpkg.com/vue@3"></script>
+  <div id="root">
+    <span id="message"></span> <br>
+    <input id="message_text" type="text">
+  </div>
+  <script>
+    const data = {
+      message: "Hola mundo"
+    }
+    const message = document.querySelector('#message')
+    const input = document.querySelector('#message_text')
+    message.innerText = data.message
+    input.value = data.message
+
+    input.addEventListener("input", () => {
+      data.message = input.value
+      message.innerText = data.message
+    })
+
+  </script>
+</body>
+</html>
